@@ -18,7 +18,7 @@ Includes multi-head attention, feed-forward layers, and layer normalization.
 **Sentiment Classifier**
 A Transformer-based model combining embeddings, positional encoding, and multiple Transformer blocks for sentiment classification.
 
-### Architecture and Hyperparameters
+## Architecture and Hyperparameters
 I developed various models for sentiment analysis of movie reviews, but this architecture has produced the best model and results.
 1. Embedding Layer: Converts token IDs into dense vectors of dimension `d_model` (128). This dense representation captures semantic information about the tokens.
 
@@ -48,4 +48,31 @@ The combination of these choices aims to balance model complexity, training effi
 
 ![archhhh](https://github.com/user-attachments/assets/1cd30713-9965-488e-97f6-5bd2ade93a3b)
 
+## Model Evaluation and result
 
+I trained the transformer-based model for 3 epochs, achieving an accuracy of 86%. When I extended the training to 5 epochs, I noticed the model started to overfit. Despite trying to adjust the hyperparameters and layers, the issue persisted. Therefore, I believe the solutions are to perform data augmentation or to use a pretrained model such as BERT.
+
+## Model deployment
+Once the model is trained and saved, and all preprocessing steps are complete, I start the FastAPI server to serve predictions.This allows me to create an API that can handle real-time requests and provide sentiment analysis for texts. 
+You can then build a front-end interface to visualize the results. Using ngrok, I expose the local FastAPI server to the public, creating a shareable URL to interact with the application from anywhere.
+1. Create an `ngrok` Account and Get a Token
+2. Set the Authentication Token:  ngrok.set_auth_token("token")
+3. Choose a Tunnel on Port for example : 8000 
+
+then anyone with the link will be able to interact with your FastAPI application
+
+![Screenshot from 2024-09-02 21-09-18](https://github.com/user-attachments/assets/4472c004-14ad-438c-9c86-f74210210e39)
+
+To expose your local FastAPI server to the internet using `ngrok`, you'll need to follow these steps:![Screenshot from 2024-09-02 21-09-26](https://github.com/user-attachments/assets/f4862a3d-d1fc-4c3b-b93b-c783ce28f1b9)
+
+
+## Requirements
+
+- Python 3.x
+- PyTorch
+- transformers
+- BeautifulSoup4
+- NLTK
+- NumPy
+- fastapi
+- pyngrok
