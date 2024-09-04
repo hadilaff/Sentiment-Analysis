@@ -1,5 +1,6 @@
 # Sentiment-Analysis of MDB Movie Reviews
 The main goal of this project is to develop model that can accurately classify the sentiment of movie reviews and implement a transformer-based model from scratch
+You can find the model in this link: https://drive.google.com/file/d/1-0TZpJwLLNJdElzlUw-ct7S3x6I3qDMa/view?usp=sharing
 
 **Dataset**
 the IMDb dataset consist of 50,000 movie reviews labeled as positive or negative.
